@@ -8,6 +8,10 @@ const PORT=7000|| process.env.PORT;
 // middlewere
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+const connectDB= require('./server/config/db');
+connectDB();
+
+// connect to db
 
 // static files
 app.use(express.static('public'));
@@ -26,6 +30,7 @@ app.get('*',(req,res)=> res.status(404).render('404'));
 app.listen(PORT,()=>{
     console.log(`app is listion on ${PORT} : http://localhost/${PORT}`)
 })
+
 
 
 
