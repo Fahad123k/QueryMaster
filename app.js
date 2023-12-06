@@ -14,11 +14,14 @@ app.use(express.static('public'));
 
 // Template Engine
 app.use(expressLayout);
-app.set('layout','./layout/main');
+app.set('layout','./layouts/main');
 app.set('view engine','ejs');
 
-// router here
+// Router here
 app.use('/',require('./server/routes/index'))
+app.use('/',require('./server/routes/dashboard'))
+// app.get('*',(req,res)=> res.status(404).send("404 Page not found"));
+app.get('*',(req,res)=> res.status(404).render('404'));
 
 app.listen(PORT,()=>{
     console.log(`app is listion on ${PORT} : http://localhost/${PORT}`)
