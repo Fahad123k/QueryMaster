@@ -10,7 +10,7 @@ exports.dashboard = async (req, res) => {
     try {
 
         const notes = await Notes.find({});
-        console.log(notes);
+        // console.log(notes);
         res.render('dashboard/index', {
             locals,
             notes,
