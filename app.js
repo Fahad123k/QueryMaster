@@ -48,7 +48,7 @@ app.use('/',require('./server/routes/dashboard'))
 app.get('*',(req,res)=> res.status(404).render('404'));
 
 app.listen(PORT,()=>{
-    console.log(`app is listion on ${PORT} : http://localhost/${PORT}`)
+    console.log(`app is listion on ${PORT} : http://localhost:${PORT}`)
 })
 
 
